@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -45,16 +46,27 @@ const solutions = [
 export default function LaadpalenPage() {
   return (
     <>
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="relative overflow-hidden border-b border-border bg-ink text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/energy/solar-workers.jpg"
+            alt=""
+            fill
+            className="object-cover object-center opacity-50"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/45" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/55">
               Laadpalen
             </p>
-            <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+            <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
               Zakelijke laadoplossingen voor bedrijven
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
               Van enkele laadpunten tot een volledig laadplein: CityTech
               ontwerpt en installeert laadinfra die past bij uw aansluiting,
               beleid en groei.
@@ -114,10 +126,17 @@ export default function LaadpalenPage() {
               <ArrowRight className="size-4" />
             </Link>
           </FadeIn>
-          {/* TODO: vervang door eigen foto - laadplein / laadpalen in gebruik */}
           <FadeIn delay={0.1}>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-              <ul className="space-y-4 text-sm text-white/80 sm:text-base">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src="/images/energy/solar-workers.jpg"
+                alt="Installatieteam bij zonne-energie-installatie"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-ink/40" />
+              <ul className="absolute inset-0 flex flex-col justify-end space-y-3 p-8 text-sm text-white sm:text-base">
                 <li className="flex gap-3">
                   <span className="mt-1 size-2 shrink-0 rounded-full bg-brand" />
                   Minder piekbelasting op de aansluiting

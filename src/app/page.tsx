@@ -12,6 +12,7 @@ import {
 import { ButtonLink } from "@/components/ui/button-link";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { VideoBackground } from "@/components/ui/video-background";
 import { PillarCard } from "@/components/sections/pillar-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { siteConfig } from "@/lib/site";
@@ -48,29 +49,23 @@ const usps = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink text-white">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(182,9,1,0.35),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.08),transparent_45%)]"
-          aria-hidden
+      <section className="relative flex min-h-[88vh] items-end overflow-hidden bg-ink text-white sm:min-h-[92vh]">
+        <VideoBackground
+          src="/videos/engineer.mp4"
+          poster="/images/hero/engineer-portrait.jpg"
+          overlayClassName="bg-gradient-to-r from-ink/90 via-ink/75 to-ink/45"
         />
-        {/* TODO: vervang door eigen foto - bedrijfspand / installatieteam / projectlocatie */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 opacity-30 lg:block">
-          <div className="h-full w-full bg-[linear-gradient(135deg,transparent_20%,rgba(182,9,1,0.4)_100%)]" />
-        </div>
-
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8 lg:py-32">
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-28 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28">
           <FadeIn>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-white/55">
+            <p className="mb-4 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {siteConfig.name}
             </p>
-            <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               Elektrotechniek. Energieopslag. Laadinfra.
-              <span className="mt-2 block text-white/90">Eén partner.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              CityTech helpt bedrijven met elektrische installaties én de
-              energietransitie: van utiliteit tot MW-batterijen en zakelijke
-              laadpalen — praktisch, snel en betrouwbaar.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+              Eén partner voor elektrische installaties én de energietransitie —
+              van utiliteit tot MW-batterijen en zakelijke laadpalen.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/contact" size="lg" variant="default">
@@ -84,29 +79,6 @@ export default function HomePage() {
               >
                 Ontdek MW-batterijen
               </ButtonLink>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.12} className="relative hidden lg:block">
-            {/* TODO: vervang door eigen foto - hero visual werkbusjes / project */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent shadow-2xl">
-              <Image
-                src="/images/mw-batterijen/zte-e260c4.jpg"
-                alt="ZTE Energy Master batterijsysteem"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 0vw, 40vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="font-display text-lg font-semibold">
-                  Zakelijke energieopslag
-                </p>
-                <p className="mt-1 text-sm text-white/70">
-                  Plug-and-play BESS voor piekvermijding en netcongestie
-                </p>
-              </div>
             </div>
           </FadeIn>
         </div>
@@ -181,9 +153,7 @@ export default function HomePage() {
               om opslag en laden veilig en slim te integreren in de bestaande
               elektrische infrastructuur.
             </p>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <ul className="space-y-4 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+            <ul className="mt-6 space-y-3">
               {[
                 "Piekvermogen beheersen zonder directe netaansluitverzwaring",
                 "Meer eigen of goedkope stroom benutten wanneer het telt",
@@ -199,6 +169,17 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg shadow-black/10 sm:aspect-[5/4] lg:aspect-[4/5]">
+              <Image
+                src="/images/energy/wind-data.jpg"
+                alt="Energie-infrastructuur en monitoring"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </FadeIn>
         </div>
       </Section>

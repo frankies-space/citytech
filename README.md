@@ -59,7 +59,8 @@ Zoek in de code naar `TODO:` comments. Belangrijkste open punten:
 - **Projectfoto’s** op `/projecten` (nu gradients)
 - **Contactformulier-endpoint** — verzending nog niet gekoppeld (Resend/Formspree/etc.)
 - **ZTE-productfoto** staat al op `/public/images/mw-batterijen/zte-e260c4.jpg`
-
+- **Video’s:** `/public/videos/engineer.mp4` (home hero), `/public/videos/forest-drone.mp4` (MW-batterijen hero)
+- **Stock visuals:** `/public/images/hero`, `/public/images/team`, `/public/images/energy` (tijdelijk tot eigen foto’s)
 ## Contact (live site)
 
 - Zwarteweg 97, 1431 VK Aalsmeer

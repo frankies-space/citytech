@@ -15,6 +15,7 @@ import {
 import { ButtonLink } from "@/components/ui/button-link";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { VideoBackground } from "@/components/ui/video-background";
 import { CTASection } from "@/components/sections/cta-section";
 import { SpecTable, StepTimeline } from "@/components/sections/step-timeline";
 import { zteSpecs } from "@/lib/site";
@@ -132,9 +133,9 @@ export default function MwBatterijenPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#0c1524] text-white">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(182,9,1,0.35),transparent_50%),linear-gradient(180deg,rgba(12,21,36,0.2),rgba(12,21,36,0.95))]"
-          aria-hidden
+        <VideoBackground
+          src="/videos/forest-drone.mp4"
+          overlayClassName="bg-gradient-to-r from-[#0c1524]/92 via-[#0c1524]/80 to-[#0c1524]/55"
         />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:px-8">
           <FadeIn>

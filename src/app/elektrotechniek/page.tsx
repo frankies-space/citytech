@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Cable,
   CircuitBoard,
@@ -54,16 +55,27 @@ const services = [
 export default function ElektrotechniekPage() {
   return (
     <>
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="relative overflow-hidden border-b border-border bg-ink text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/team/engineer-clipboard.jpg"
+            alt=""
+            fill
+            className="object-cover object-center opacity-45"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/50" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/55">
               Elektrotechniek
             </p>
-            <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+            <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
               Installateurs die graag ontzorgen
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
               Van utiliteit en Digital out of Home tot storingsoplossing en
               onderhoud: CityTech levert elektrotechniek met korte lijnen,
               gecertificeerde monteurs en een projectmatige aanpak.
@@ -114,13 +126,18 @@ export default function ElektrotechniekPage() {
               tevreden bent.
             </p>
           </FadeIn>
-          {/* TODO: vervang door eigen foto - installatiewerk / groepenkast / DOOH montage */}
           <FadeIn delay={0.08}>
-            <div className="flex min-h-64 items-end rounded-2xl bg-gradient-to-br from-ink to-brand-dark p-8 text-white shadow-lg shadow-black/10">
-              <div>
-                <p className="font-display text-xl font-bold">
-                  Veiligheid eerst
-                </p>
+            <div className="relative min-h-72 overflow-hidden rounded-2xl shadow-lg shadow-black/10">
+              <Image
+                src="/images/hero/engineer-portrait.jpg"
+                alt="Elektrotechnisch specialist in veiligheidskleding"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
+              <div className="absolute bottom-0 p-8 text-white">
+                <p className="font-display text-xl font-bold">Veiligheid eerst</p>
                 <p className="mt-2 text-sm text-white/70">
                   Kwaliteit en veiligheid staan centraal — inclusief garantie
                   op installatiewerkzaamheden.
