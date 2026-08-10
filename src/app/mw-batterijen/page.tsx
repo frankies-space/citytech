@@ -135,6 +135,7 @@ export default function MwBatterijenPage() {
       <section className="relative overflow-hidden bg-[#0c1524] text-white">
         <VideoBackground
           src="/videos/forest-drone.mp4"
+          poster="/images/energy/bess-landscape.jpg"
           overlayClassName="bg-gradient-to-r from-[#0c1524]/92 via-[#0c1524]/80 to-[#0c1524]/55"
         />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:px-8">

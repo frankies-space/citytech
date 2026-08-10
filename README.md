@@ -10,6 +10,18 @@ Gebaseerd op de bestaande site [citytech.nl](https://citytech.nl) (kleuren, logo
 - Tailwind CSS v4
 - Framer Motion, Lucide icons
 - React Hook Form + Zod (contactformulier)
+- PWA: web app manifest + service worker (installable, offline shell)
+
+## PWA
+
+- Manifest: `/manifest.webmanifest` (via `src/app/manifest.ts`)
+- Icons: `/public/icons/`
+- Service worker: `/public/sw.js` (registreert alleen in productie)
+- Installeerbaar op telefoon/desktop (Chrome/Edge/Safari “Zet op beginscherm”)
+
+## Video-strategie
+
+Hero-video’s laden **niet** op mobiel, bij `prefers-reduced-motion`, of bij Save-Data / 2G. Dan tonen we een stilstaand poster-beeld. Op desktop speelt video alleen als de hero in beeld is (`preload="none"`). Video’s worden niet door de service worker gecached.
 
 ## Starten
 
