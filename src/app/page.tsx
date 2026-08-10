@@ -173,8 +173,8 @@ export default function HomePage() {
           <FadeIn delay={0.1}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg shadow-black/10 sm:aspect-[5/4] lg:aspect-[4/5]">
               <Image
-                src="/images/energy/wind-data.jpg"
-                alt="Energie-infrastructuur en monitoring"
+                src="/images/energy/solar-wind-farm.jpg"
+                alt="Zonnepark, windturbines en energieopslag bij zonsondergang"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
